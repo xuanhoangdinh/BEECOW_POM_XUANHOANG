@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.beecow.testcase.LoginScript">
+      <class name="com.beecow.testcase.CreateProductScript">
         <methods>
-          <include name="TC_01"/>
+          <include name="TC_33"/>
         </methods>
-      </class> <!-- com.beecow.testcase.LoginScript -->
+      </class> <!-- com.beecow.testcase.CreateProductScript -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

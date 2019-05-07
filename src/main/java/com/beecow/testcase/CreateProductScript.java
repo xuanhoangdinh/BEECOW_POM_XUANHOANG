@@ -36,7 +36,11 @@ public class CreateProductScript extends Commontestcase {
 		Thread.sleep(3000);
 		createProductPage = homePage.clickSellerPage();
 		Thread.sleep(3000);
-		//
+		// upload picture in foder project
+		String userPath = System.getProperty("user.dir");
+		String pathImage = userPath.concat("\\image\\2019259.jpg");
+		locatorDataImage = pathImage;
+//
 		imgUploadMsg = "Hãy chọn hình ảnh cho sản phẩm";
 		nameProductMsg = "Hãy điền tên sản phẩm";
 		catProdMsg = "Hãy chọn danh mục.";
@@ -66,7 +70,6 @@ public class CreateProductScript extends Commontestcase {
 		length = "30";
 //		Height: "50"
 		height = "50";
-		locatorDataImage = "C:\\image.jpg";
 	}
 
 	@BeforeMethod

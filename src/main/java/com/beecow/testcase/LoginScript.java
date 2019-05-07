@@ -119,7 +119,7 @@ public class LoginScript extends Commontestcase {
 	public void TC_07_LoginCorrectEmailSdtAndPassword() {
 		loginPage.iputMatkhau(passwordCorrect);
 		loginPage.clickbuttonDangnhap();
-//		verifyEqual(loginPage.getTextUserName(), "genymotionios");	
+//		verifyEqual(HomePage.getTextUserName(), "genymotionios");	
 		}
 
 	@AfterClass
