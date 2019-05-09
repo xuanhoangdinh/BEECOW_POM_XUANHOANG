@@ -20,8 +20,8 @@ public class CreateProductScript extends Commontestcase {
 	HomePage homePage;
 	CreateProductPage createProductPage;
 	String imgUploadMsg, nameProductMsg, catProdMsg, desProdMsg, qtyProdMsg, priceProdMsg, weightProdMsg, requiredMsg,
-			locatorDataImage, nameProdMsg, productName, description, sku, quantity, price, discount, weight, width,
-			length, height;
+			locatorDataImage, nameProdMsg, productName, description, sku, quantity, price, displayPrice, discount,
+			weight, width, length, height;
 
 	@Parameters({ "browser", "version", "url" })
 	@BeforeClass
@@ -60,15 +60,16 @@ public class CreateProductScript extends Commontestcase {
 		quantity = "10";
 		// Price:
 		price = "8";
+		displayPrice = "đ 8,000";
 		// Discount:
 		discount = "10";
-//		Weight
+//		//Weight
 		weight = "10000";
-//		Width: "50"
+//		//Width: "50"
 		width = "50";
-//		Length: "30"
+//		//Length: "30"
 		length = "30";
-//		Height: "50"
+//		//Height: "50"
 		height = "50";
 	}
 
@@ -174,10 +175,17 @@ public class CreateProductScript extends Commontestcase {
 		createProductPage.inputHeight(height);
 		createProductPage.clickPost();
 		createProductPage.clickViewList();
+		// Verify product name and price is displayed at shop page
+		verifyEqual(createProductPage.getTextDisplayNameProduct(), productName);
+		verifyEqual(createProductPage.getTextDisplayPrice(), displayPrice);
 		createProductPage.clickEditProduct(productName);
-
 		verifyEqual(createProductPage.getTextJS("return $('#name').val()"), productName);
+		verifyEqual(createProductPage.getTextEditDescription(), description);
+		verifyEqual(createProductPage.getTextJS("return $('#org-sku').val()"),sku);
+		//
+		verifyEqual(createProductPage.getTextJS("return $('input[formcontrolname=\"totalItem\"]').val()"),discount);
 		verifyEqual(createProductPage.getTextJS("return $('input[formcontrolname=\"weight\"]').val()"), weight);
+		verifyEqual(createProductPage.getTextJS("return $('input[formcontrolname=\"width\"]').val()"), width);
 
 	}
 

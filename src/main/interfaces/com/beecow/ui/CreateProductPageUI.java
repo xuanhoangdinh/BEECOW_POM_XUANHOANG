@@ -37,6 +37,7 @@ public class CreateProductPageUI {
 
 	// name product
 	public static final String NAME_PRODUCT_TXT = "//input[@id='name']";
+	public static final String DISPLAY_NAME_PRODUCT_LBL = "//p[@class='pro-name']";
 	public static final String PRODUCT_NAME_MSG = "//label[contains(@beetranslate,'productName')]/span";
 
 	public static final String CAT1_DROPDOWN = "//div[contains(@class,'category-left')]//li";
@@ -51,9 +52,10 @@ public class CreateProductPageUI {
 
 	// description
 	public static final String DESCCRIPTION_TXT = "//div[@class='fr-element fr-view']";
-//	public static final String DESCCRIPTION_TXT = "//label[contains(@beetranslate,'description')]/following-sibling::div//div[contains(@class,'fr-view')]";
+    //public static final String DESCCRIPTION_TXT = "//label[contains(@beetranslate,'description')]/following-sibling::div//div[contains(@class,'fr-view')]";
 	public static final String DESCCRIPTION_MSG = "//label[contains(@beetranslate,'error.description')]/span";
-
+	public static final String VIEW_EDIT_DESCRIPTTION_TXT = "//p[contains(text(),'Description product')]";
+	
 	// Quantity
 	public static final String QUANTITY_TXT = "//input[@formcontrolname='totalItem']";
 	public static final String QUANTITY_MSG = "//label[contains(@beetranslate,'itemQty')]/span";
@@ -61,6 +63,7 @@ public class CreateProductPageUI {
 	// Price
 	public static final String PRICE_TXT = "//input[@formcontrolname='orgPrice']";
 	public static final String PRICE_MSG = "//label[contains(@beetranslate,'error.price')]/span";
+	public static final String DISPLAY_PRICE_LBN = "//p[@class='price-disc']";
 
 	// Discount:
 	public static final String DISCOUNT_TXT = "//input[@formcontrolname='weight']";

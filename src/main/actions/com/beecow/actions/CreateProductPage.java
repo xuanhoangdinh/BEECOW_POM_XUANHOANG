@@ -37,11 +37,21 @@ public class CreateProductPage extends commonFunction {
 		input(CreateProductPageUI.NAME_PRODUCT_TXT, value);
 	}
 
+	public String getTextDisplayNameProduct() {
+		waitVisible(CreateProductPageUI.DISPLAY_NAME_PRODUCT_LBL);
+		return getText(CreateProductPageUI.DISPLAY_NAME_PRODUCT_LBL);
+	}
+
 	// description
 	public void inputDescription(String value) {
 		waitVisible(CreateProductPageUI.DESCCRIPTION_TXT);
 		clear(CreateProductPageUI.DESCCRIPTION_TXT);
 		input(CreateProductPageUI.DESCCRIPTION_TXT, value);
+	}
+
+	public String getTextEditDescription() {
+		waitVisible(CreateProductPageUI.VIEW_EDIT_DESCRIPTTION_TXT);
+		return getText(CreateProductPageUI.VIEW_EDIT_DESCRIPTTION_TXT);
 	}
 
 	public String getTextDesMsg() {
@@ -68,6 +78,11 @@ public class CreateProductPage extends commonFunction {
 		waitVisible(CreateProductPageUI.PRICE_TXT);
 		clear(CreateProductPageUI.PRICE_TXT);
 		input(CreateProductPageUI.PRICE_TXT, value);
+	}
+
+	public String getTextDisplayPrice() {
+		waitVisible(CreateProductPageUI.DISPLAY_PRICE_LBN);
+		return getText(CreateProductPageUI.DISPLAY_PRICE_LBN);
 	}
 
 	// Discount:
