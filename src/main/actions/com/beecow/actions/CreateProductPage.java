@@ -72,7 +72,17 @@ public class CreateProductPage extends commonFunction {
 		clear(CreateProductPageUI.QUANTITY_TXT);
 		input(CreateProductPageUI.QUANTITY_TXT, value);
 	}
-
+	
+	public void clickEditQuantity() {
+		waitVisible(CreateProductPageUI.QUANTITY_EDIT_BTN);
+		click(CreateProductPageUI.QUANTITY_EDIT_BTN);
+	}
+	public void clickConfirmQuantity() {
+		waitVisible(CreateProductPageUI.QUANTITY_CONFIRM_BTN);
+		click(CreateProductPageUI.QUANTITY_CONFIRM_BTN);
+	}
+	
+	
 // Price
 	public void inputPrice(String value) {
 		waitVisible(CreateProductPageUI.PRICE_TXT);
@@ -119,12 +129,15 @@ public class CreateProductPage extends commonFunction {
 		clear(CreateProductPageUI.HEIGHT_TXT);
 		input(CreateProductPageUI.HEIGHT_TXT, value);
 	}
-
+//Button
 	public void clickPost() {
 		waitVisible(CreateProductPageUI.POST_BTN);
 		click(CreateProductPageUI.POST_BTN);
 	}
-
+	public void clickUpdate() {
+		waitVisible(CreateProductPageUI.UPDATE_BTN);
+		click(CreateProductPageUI.UPDATE_BTN);
+	}
 	public void clickCate1() {
 		waitVisible(CreateProductPageUI.CATE1_BTN);
 		click(CreateProductPageUI.CATE1_BTN);
@@ -139,10 +152,14 @@ public class CreateProductPage extends commonFunction {
 		waitVisible(CreateProductPageUI.CATE2_BTN);
 		click(CreateProductPageUI.CATE2_BTN);
 	}
-
+	
 	public void clickViewList() {
 		waitVisible(CreateProductPageUI.VIEW_LIST_BTN);
 		click(CreateProductPageUI.VIEW_LIST_BTN);
+	}
+	public void clickSeeProductDetail() {
+		waitVisible(CreateProductPageUI.SEE_PRODUCT_DETAIL_BTN);
+		click(CreateProductPageUI.SEE_PRODUCT_DETAIL_BTN);
 	}
 
 	public void clickEditProduct(String value) throws InterruptedException {

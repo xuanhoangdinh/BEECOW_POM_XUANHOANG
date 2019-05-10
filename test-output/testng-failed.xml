@@ -12,7 +12,7 @@
       <class name="com.beecow.testcase.CreateProductScript">
         <methods>
           <include name="beforeMethod"/>
-          <include name="TC_33"/>
+          <include name="TC_34"/>
           <include name="BeforeClass"/>
           <include name="AfterClass"/>
         </methods>

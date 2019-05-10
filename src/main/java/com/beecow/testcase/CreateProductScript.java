@@ -20,8 +20,8 @@ public class CreateProductScript extends Commontestcase {
 	HomePage homePage;
 	CreateProductPage createProductPage;
 	String imgUploadMsg, nameProductMsg, catProdMsg, desProdMsg, qtyProdMsg, priceProdMsg, weightProdMsg, requiredMsg,
-			locatorDataImage, nameProdMsg, productName, description, sku, quantity, price, displayPrice, discount,
-			weight, width, length, height;
+			locatorDataImage, nameProdMsg, productName, description, sku, quantity,quantityEdit, priceInput, priceDisplayProduct,
+			priceNewDiscount, priceViewEdit, discount, weight, width, length, height;
 
 	@Parameters({ "browser", "version", "url" })
 	@BeforeClass
@@ -58,9 +58,13 @@ public class CreateProductScript extends Commontestcase {
 		sku = "SKUShirt";
 		// Quantity
 		quantity = "10";
+		quantityEdit = "0";
 		// Price:
-		price = "8";
-		displayPrice = "đ 8,000";
+		priceInput = "8";
+		priceViewEdit = "8,000";
+		priceDisplayProduct = "đ 7,200";
+		priceNewDiscount = "7,200";
+
 		// Discount:
 		discount = "10";
 //		//Weight
@@ -156,7 +160,6 @@ public class CreateProductScript extends Commontestcase {
 //		createProductPage.clickPostProduct();
 		createProductPage.uploadIMG(locatorDataImage);
 		createProductPage.inputNameProduct(productName);
-//		createProductPage.clickPostProduct();
 		createProductPage.clickCate1();
 		createProductPage.clickRandomValueCate1();
 		createProductPage.clickCate2();
@@ -167,7 +170,7 @@ public class CreateProductScript extends Commontestcase {
 		createProductPage.inputDescription(description);
 		createProductPage.inputSKU(sku);
 		createProductPage.inputQuantity(quantity);
-		createProductPage.inputPrice(price);
+		createProductPage.inputPrice(priceInput);
 		createProductPage.inputDiscount(discount);
 		createProductPage.inputWeight(weight);
 		createProductPage.inputWidth(width);
@@ -177,16 +180,56 @@ public class CreateProductScript extends Commontestcase {
 		createProductPage.clickViewList();
 		// Verify product name and price is displayed at shop page
 		verifyEqual(createProductPage.getTextDisplayNameProduct(), productName);
-		verifyEqual(createProductPage.getTextDisplayPrice(), displayPrice);
+		verifyEqual(createProductPage.getTextDisplayPrice(), priceDisplayProduct);
 		createProductPage.clickEditProduct(productName);
 		verifyEqual(createProductPage.getTextJS("return $('#name').val()"), productName);
 		verifyEqual(createProductPage.getTextEditDescription(), description);
-		verifyEqual(createProductPage.getTextJS("return $('#org-sku').val()"),sku);
-		//
-		verifyEqual(createProductPage.getTextJS("return $('input[formcontrolname=\"totalItem\"]').val()"),discount);
+		verifyEqual(createProductPage.getTextJS("return $('#org-sku').val()"), sku);
+		verifyEqual(createProductPage.getTextJS("return $('input[formcontrolname=\"totalItem\"]').val()"), quantity);
+		verifyEqual(createProductPage.getTextJS("return $('input[formcontrolname=\"orgPrice\"]').val()"),
+				priceViewEdit);
+		verifyEqual(createProductPage.getTextJS("return $('input[formcontrolname=\"totalItem\"]').val()"), discount);
+		verifyEqual(createProductPage.getTextJS("return $('input[formcontrolname=\"newPrice\"]').val()"),
+				priceNewDiscount);
 		verifyEqual(createProductPage.getTextJS("return $('input[formcontrolname=\"weight\"]').val()"), weight);
 		verifyEqual(createProductPage.getTextJS("return $('input[formcontrolname=\"width\"]').val()"), width);
+		verifyEqual(createProductPage.getTextJS("return $('input[formcontrolname=\"length\"]').val()"), length);
+		verifyEqual(createProductPage.getTextJS("return $('input[formcontrolname=\"height\"]').val()"), height);
 
+	}
+
+	@Test
+	public void TC_34() throws Exception {
+		productName = "XuanHoang" + randomName();
+//		createProductPage.clickPostProduct();
+		createProductPage.uploadIMG(locatorDataImage);
+		createProductPage.inputNameProduct(productName);
+		createProductPage.clickCate1();
+		createProductPage.clickRandomValueCate1();
+		createProductPage.clickCate2();
+		createProductPage.clickRandomValueCate2();
+		createProductPage.clickRandomCat3();
+		Thread.sleep(1000);
+		//
+		createProductPage.inputDescription(description);
+		createProductPage.inputSKU(sku);
+		createProductPage.inputQuantity(quantity);
+		createProductPage.inputPrice(priceInput);
+		createProductPage.inputDiscount(discount);
+		createProductPage.inputWeight(weight);
+		createProductPage.inputWidth(width);
+		createProductPage.inputLength(length);
+		createProductPage.inputHeight(height);
+		createProductPage.clickPost();
+		createProductPage.clickViewList();
+		createProductPage.clickEditProduct(productName);
+		//
+		createProductPage.clickEditQuantity();
+		createProductPage.inputQuantity(quantityEdit);
+		createProductPage.clickConfirmQuantity();
+		
+		createProductPage.clickUpdate();
+		createProductPage.clickSeeProductDetail();
 	}
 
 	@AfterClass
