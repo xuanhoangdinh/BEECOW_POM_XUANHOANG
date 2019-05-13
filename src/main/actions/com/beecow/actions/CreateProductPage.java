@@ -26,9 +26,23 @@ public class CreateProductPage extends commonFunction {
 		return getText(LoginPageUI.USERNAME_LBL);
 	}
 
+	public void deleteProduct() {
+		waitVisible(CreateProductPageUI.DELETE_BTN);
+		click(CreateProductPageUI.DELETE_BTN);
+		waitVisible(CreateProductPageUI.DELETE_CONFIRM_BTN);
+		click(CreateProductPageUI.DELETE_CONFIRM_BTN);
+
+	}
+
 	public void clickPostProduct() {
 		waitVisible(CreateProductPageUI.POST_PRODUCT_BTN);
 		click(CreateProductPageUI.POST_PRODUCT_BTN);
+	}
+
+	// dynamic text
+	public String getDynamicText(String value) {
+		waitVisibleDynamicElement(LoginPageUI.DYNAMIC_MSG, value);
+		return getTextDynamicElement(LoginPageUI.DYNAMIC_MSG, value);
 	}
 
 	// name product
@@ -40,6 +54,11 @@ public class CreateProductPage extends commonFunction {
 	public String getTextDisplayNameProduct() {
 		waitVisible(CreateProductPageUI.DISPLAY_NAME_PRODUCT_LBL);
 		return getText(CreateProductPageUI.DISPLAY_NAME_PRODUCT_LBL);
+	}
+
+	public String getTextDisplayNameProductEdit() {
+		waitVisible(CreateProductPageUI.DISPLAY_NAMEPRODUCT_EDIT_LBL);
+		return getText(CreateProductPageUI.DISPLAY_NAMEPRODUCT_EDIT_LBL);
 	}
 
 	// description
@@ -72,17 +91,23 @@ public class CreateProductPage extends commonFunction {
 		clear(CreateProductPageUI.QUANTITY_TXT);
 		input(CreateProductPageUI.QUANTITY_TXT, value);
 	}
-	
+
 	public void clickEditQuantity() {
 		waitVisible(CreateProductPageUI.QUANTITY_EDIT_BTN);
 		click(CreateProductPageUI.QUANTITY_EDIT_BTN);
 	}
+
+	public void inputEditQuantity(String value) {
+		waitVisible(CreateProductPageUI.QUANTITY_EDIT_TXT);
+		clear(CreateProductPageUI.QUANTITY_EDIT_TXT);
+		input(CreateProductPageUI.QUANTITY_EDIT_TXT, value);
+	}
+
 	public void clickConfirmQuantity() {
 		waitVisible(CreateProductPageUI.QUANTITY_CONFIRM_BTN);
 		click(CreateProductPageUI.QUANTITY_CONFIRM_BTN);
 	}
-	
-	
+
 // Price
 	public void inputPrice(String value) {
 		waitVisible(CreateProductPageUI.PRICE_TXT);
@@ -129,15 +154,18 @@ public class CreateProductPage extends commonFunction {
 		clear(CreateProductPageUI.HEIGHT_TXT);
 		input(CreateProductPageUI.HEIGHT_TXT, value);
 	}
+
 //Button
 	public void clickPost() {
 		waitVisible(CreateProductPageUI.POST_BTN);
 		click(CreateProductPageUI.POST_BTN);
 	}
+
 	public void clickUpdate() {
 		waitVisible(CreateProductPageUI.UPDATE_BTN);
 		click(CreateProductPageUI.UPDATE_BTN);
 	}
+
 	public void clickCate1() {
 		waitVisible(CreateProductPageUI.CATE1_BTN);
 		click(CreateProductPageUI.CATE1_BTN);
@@ -152,11 +180,12 @@ public class CreateProductPage extends commonFunction {
 		waitVisible(CreateProductPageUI.CATE2_BTN);
 		click(CreateProductPageUI.CATE2_BTN);
 	}
-	
+
 	public void clickViewList() {
 		waitVisible(CreateProductPageUI.VIEW_LIST_BTN);
 		click(CreateProductPageUI.VIEW_LIST_BTN);
 	}
+
 	public void clickSeeProductDetail() {
 		waitVisible(CreateProductPageUI.SEE_PRODUCT_DETAIL_BTN);
 		click(CreateProductPageUI.SEE_PRODUCT_DETAIL_BTN);
@@ -169,6 +198,11 @@ public class CreateProductPage extends commonFunction {
 		clickDynamicElement(CreateProductPageUI.EDIT_PRODUCT_BTN, value);
 	}
 
+	public void clickEditProductSuccessful(){
+		waitVisible(CreateProductPageUI.EDIT_PRODUCT_EDITSUCCESFUL_BTN);
+		click(CreateProductPageUI.EDIT_PRODUCT_EDITSUCCESFUL_BTN);
+	}
+	
 	public String getTextJS(String value) throws Exception {
 		Thread.sleep(2000);
 		return getTextJquery(value);

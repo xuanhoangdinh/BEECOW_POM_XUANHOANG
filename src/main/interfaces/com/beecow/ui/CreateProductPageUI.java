@@ -1,11 +1,16 @@
 package com.beecow.ui;
 
 public class CreateProductPageUI {
-	//BUTTON
+    //
+	public static final String DYNAMIC_MSG = "//*[contains(text(),'%s')]";
+
+	// BUTTON //button[@class='left btn-line-grey']
 	public static final String POST_PRODUCT_BTN = "//li[@class='inner-menu-mobile']//a[@beetranslate='beecow.menu.store.uploadProduct']";
 	public static final String POST_BTN = "//button[@class='btn-solid-orange']//span[contains(text(),'Đăng')]";
-	public static final String UPDATE_BTN = "//font[contains(text(),'Update')]";
-	
+	public static final String UPDATE_BTN = "//button[@beetranslate=\"beecow.item.action.update\"]/span";
+	public static final String DELETE_BTN = "//button[@class='left btn-line-grey']";
+	public static final String DELETE_CONFIRM_BTN = "//div[@class='modal-dialog tiny']//button[@class='btn-line-pink']";
+
 	public static final String CATE1_BTN = "//div[contains(@class,'category-left')]/button";
 	public static final String CATE1_LIST = "//div[contains(@class,'category-left')]//li";
 	public static final String CATE2_BTN = "//div[contains(@class,'category-mid')]/button";
@@ -15,8 +20,11 @@ public class CreateProductPageUI {
 	public static final String VIEW_LIST_BTN = "//button[contains(@beetranslate,'viewList')]/span";
 	public static final String EDIT_PRODUCT_BTN = "//p[contains(text(),'%s')]/ancestor::a//a[contains(@beetranslate,'detail.viewEdit')]";
 	public static final String IMAGE_PRODUCT = "//p[contains(text(),'%s')]";
-	// IMAGE
+	// button chỉnh sửa ts 34
+	public static final String EDIT_PRODUCT_EDITSUCCESFUL_BTN = "//button[@id='edit-product']//span[contains(text(),'Chỉnh sửa')]";
 	
+	// IMAGE
+
 	public static final String IMG_MSG = "//label[contains(@beetranslate,'chooseImage')]/span";
 	public static final String IMG_UPLOAD = "//div[@id='upload-empty']//input[@name='qqfile']";
 
@@ -42,8 +50,9 @@ public class CreateProductPageUI {
 	public static final String DISPLAY_NAME_PRODUCT_LBL = "//p[@class='pro-name']";
 	public static final String PRODUCT_NAME_MSG = "//label[contains(@beetranslate,'productName')]/span";
 	public static final String SEE_PRODUCT_DETAIL_BTN = "//span[contains(text(),'Xem chi tiết sản phẩm')]";
+	public static final String DISPLAY_NAMEPRODUCT_EDIT_LBL = "//h3[@class='title fnt-bld mrgt20 mrgb15']";
 
-	
+
 	public static final String CAT1_DROPDOWN = "//div[contains(@class,'category-left')]//li";
 
 	public static final String CAT2_DROPDOWN = "//div[contains(@class,'category-mid')]//li";
@@ -65,6 +74,7 @@ public class CreateProductPageUI {
 	public static final String QUANTITY_TXT = "//input[@formcontrolname='totalItem']";
 	public static final String QUANTITY_MSG = "//label[contains(@beetranslate,'itemQty')]/span";
 	public static final String QUANTITY_EDIT_BTN = "//span[@class=\"icon-pen-underline\"]";
+	public static final String QUANTITY_EDIT_TXT = "//input[@id='editQty']";
 	public static final String QUANTITY_CONFIRM_BTN = "//span[contains(text(),'Xác nhận')]";
 	// Price
 	public static final String PRICE_TXT = "//input[@formcontrolname='orgPrice']";
