@@ -11,15 +11,17 @@ import com.beecow.actions.HomePage;
 import com.beecow.actions.LoginPage;
 
 import CommonPage.Commontestcase;
+import ObjectPageJson.JsonData;
 
 public class LoginScript extends Commontestcase {
 	WebDriver driver;
 	LoginPage loginPage;
 	HomePage homePage;
+	JsonData data;
 	String emailAndSdtorPasswordIncorrectMsg, emailSdtOrPasswordWrongMsg, PhoneNumberIncorrectMsg, phoneIncorrect,
 			emailIncorrectMsg, emailCorrect, emailIncorrect, passwordNotEnoughtCharacterMsg,
 			passwordNotEnoughtCharacter, passwordWrong, passwordCorrect;
-
+	
 	@Parameters({ "browser", "version", "url" })
 	@BeforeClass
 	public void BeforeClass(String browser, String version, String url) {
@@ -37,12 +39,8 @@ public class LoginScript extends Commontestcase {
 		emailCorrect = "genymotionios@gmail.com";
 		phoneIncorrect = "1234";
 		emailIncorrect = "1234abcd";
+		data = getDataJson(".\\Data\\BeeCow.json");
 	}
-
-//	@BeforeMethod
-//	public void beforeMethod() {
-//		
-//	}
 
 	@Test
 	public void TC_01_LoginEmptyEmailAndPassWord() {
