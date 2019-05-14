@@ -103,7 +103,7 @@ public class LoginScript extends Commontestcase {
 
 //
 	@Test
-	public void TC_06_LogincorrectEmailWrongPasswordr() {
+	public void TC_06_LogincorrectEmailWrongPassword() {
 		loginPage.iputMatkhau(passwordWrong);
 		loginPage.clickbuttonDangnhap();
 		verifyEqual(loginPage.getDynamicText(emailSdtOrPasswordWrongMsg), "Sai email / số điện thoại hoặc mật khẩu");
@@ -116,15 +116,17 @@ public class LoginScript extends Commontestcase {
 //		4. Input password: "1234@abcd"
 //		5. Click button: Đăng nhập.Verify label username "genymotionios" is displayed on the top right screen
 	@Test
-	public void TC_07_LoginCorrectEmailSdtAndPassword() {
+	public void TC_07_LoginCorrectEmailSdtAndPassword() throws InterruptedException {
 		loginPage.iputMatkhau(passwordCorrect);
 		loginPage.clickbuttonDangnhap();
-//		verifyEqual(HomePage.getTextUserName(), "genymotionios");	
+		Thread.sleep(3000);
+		verifyEqual(loginPage.getTextUserName(), "genymotionios");
+		Thread.sleep(3000);
 		}
 
 	@AfterClass
 	public void AfterClass() {
-		driver.quit();
+		 closeBrowser();
 	}
 
 }

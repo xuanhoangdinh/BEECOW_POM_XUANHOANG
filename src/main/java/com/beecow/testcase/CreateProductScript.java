@@ -24,9 +24,11 @@ public class CreateProductScript extends Commontestcase {
 	String imgUploadRequiredMsg, nameProductRequiredMsg, categoryRequiredMsg, descriptionRequiredMsg,
 			quantityRequiredMsg, priceRequiredMsg, weightRequiredMsg, requiredMsg, locatorDataImage, nameProdMsg,
 			postProductSuccessfulMsg, productName, description, sku, quantity, quantityEdit, priceInput,
-			priceProductNoDiscount, priceDisplayProduct, priceNewDiscount, priceViewEdit, discount, weight, width,
-			length, lenghtOne, lengthBiggerRange, lengthSmallerRange, lengthMustRangeMsg, height, heightOne,
-			heightBiggerRange, heightSmallerRange, heightMustRangeMsg, outOfStock, updateProductSuccessfulMsg;
+			priceProductNoDiscount, priceDisplayProduct, priceNewDiscount, priceViewEdit, discount, weight,
+			weightSmallerRange, weightBiggerRange, weightMustRangeMsg, weightMin, width, widthMustRangeMsg,
+			widthSmallerRange, widthBiggerRange, widthMin, length, lenghtOne, lengthBiggerRange, lengthSmallerRange,
+			lengthMustRangeMsg, height, heightOne, heightBiggerRange, heightSmallerRange, heightMustRangeMsg,
+			outOfStock, updateProductSuccessfulMsg;
 
 	@Parameters({ "browser", "version", "url" })
 	@BeforeClass
@@ -59,7 +61,8 @@ public class CreateProductScript extends Commontestcase {
 		outOfStock = "Hết hàng";
 		heightMustRangeMsg = "Từ 1cm tới 50cm";
 		lengthMustRangeMsg = "Từ 1cm tới 30cm";
-
+		weightMustRangeMsg = "Cân nặng từ 50g đến 10000g.";
+		widthMustRangeMsg = "Từ 1cm tới 50cm";
 		// description
 		description = "Description product";
 		// sku
@@ -76,9 +79,15 @@ public class CreateProductScript extends Commontestcase {
 		// Discount:
 		discount = "10";
 		// Weight
+		weightMin = "50";
 		weight = "10000";
+		weightSmallerRange = "49";
+		weightBiggerRange = "10001";
 		// Width: "50"
 		width = "50";
+		widthMin = "1";
+		widthSmallerRange = "0";
+		widthBiggerRange = "51";
 		// Length
 		length = "30";
 		lenghtOne = "1";
@@ -114,7 +123,6 @@ public class CreateProductScript extends Commontestcase {
 		verifyEqual(createProductPage.getDynamicText(nameProductRequiredMsg), "Hãy điền tên sản phẩm");
 		verifyEqual(createProductPage.getDynamicText(categoryRequiredMsg), "Hãy chọn danh mục.");
 		verifyEqual(createProductPage.getDynamicText(descriptionRequiredMsg), "Hãy mô tả sản phẩm.");
-
 		verifyEqual(createProductPage.getDynamicText(quantityRequiredMsg), "Nhập số lượng.");
 		verifyEqual(createProductPage.getDynamicText(priceRequiredMsg), "Hãy điền giá.");
 		verifyEqual(createProductPage.getDynamicText(weightRequiredMsg), "Hãy điền cân nặng sản phẩm.");
@@ -123,7 +131,7 @@ public class CreateProductScript extends Commontestcase {
 		verifyEqual(createProductPage.getDynamicText(requiredMsg), "Bắt buộc");
 	}
 
-//    TC10 : Upload image
+////    TC10 : Upload image
 	@Test
 	public void TC_10() throws Exception {
 		createProductPage.uploadIMG(locatorDataImage);
@@ -132,7 +140,6 @@ public class CreateProductScript extends Commontestcase {
 		verifyEqual(createProductPage.getDynamicText(nameProductRequiredMsg), "Hãy điền tên sản phẩm");
 		verifyEqual(createProductPage.getDynamicText(categoryRequiredMsg), "Hãy chọn danh mục.");
 		verifyEqual(createProductPage.getDynamicText(descriptionRequiredMsg), "Hãy mô tả sản phẩm.");
-
 		verifyEqual(createProductPage.getDynamicText(quantityRequiredMsg), "Nhập số lượng.");
 		verifyEqual(createProductPage.getDynamicText(priceRequiredMsg), "Hãy điền giá.");
 		verifyEqual(createProductPage.getDynamicText(weightRequiredMsg), "Hãy điền cân nặng sản phẩm.");
@@ -150,7 +157,6 @@ public class CreateProductScript extends Commontestcase {
 		Thread.sleep(1000);
 		verifyEqual(createProductPage.getDynamicText(categoryRequiredMsg), "Hãy chọn danh mục.");
 		verifyEqual(createProductPage.getDynamicText(descriptionRequiredMsg), "Hãy mô tả sản phẩm.");
-
 		verifyEqual(createProductPage.getDynamicText(quantityRequiredMsg), "Nhập số lượng.");
 		verifyEqual(createProductPage.getDynamicText(priceRequiredMsg), "Hãy điền giá.");
 		verifyEqual(createProductPage.getDynamicText(weightRequiredMsg), "Hãy điền cân nặng sản phẩm.");
@@ -170,7 +176,6 @@ public class CreateProductScript extends Commontestcase {
 		Thread.sleep(1000);
 		verifyEqual(createProductPage.getDynamicText(categoryRequiredMsg), "Hãy chọn danh mục.");
 		verifyEqual(createProductPage.getDynamicText(descriptionRequiredMsg), "Hãy mô tả sản phẩm.");
-
 		verifyEqual(createProductPage.getDynamicText(quantityRequiredMsg), "Nhập số lượng.");
 		verifyEqual(createProductPage.getDynamicText(priceRequiredMsg), "Hãy điền giá.");
 		verifyEqual(createProductPage.getDynamicText(weightRequiredMsg), "Hãy điền cân nặng sản phẩm.");
@@ -192,7 +197,6 @@ public class CreateProductScript extends Commontestcase {
 		createProductPage.clickPost();
 		Thread.sleep(1000);
 		verifyEqual(createProductPage.getDynamicText(descriptionRequiredMsg), "Hãy mô tả sản phẩm.");
-
 		verifyEqual(createProductPage.getDynamicText(quantityRequiredMsg), "Nhập số lượng.");
 		verifyEqual(createProductPage.getDynamicText(priceRequiredMsg), "Hãy điền giá.");
 		verifyEqual(createProductPage.getDynamicText(weightRequiredMsg), "Hãy điền cân nặng sản phẩm.");
@@ -236,9 +240,9 @@ public class CreateProductScript extends Commontestcase {
 		createProductPage.clickRandomValueCate2();
 		createProductPage.clickRandomCat3();
 		createProductPage.inputDescription(description);
+		createProductPage.inputQuantity(quantity);
 		createProductPage.clickPost();
 		Thread.sleep(1000);
-		createProductPage.inputQuantity(quantity);
 		verifyEqual(createProductPage.getDynamicText(priceRequiredMsg), "Hãy điền giá.");
 		verifyEqual(createProductPage.getDynamicText(weightRequiredMsg), "Hãy điền cân nặng sản phẩm.");
 		verifyEqual(createProductPage.getDynamicText(requiredMsg), "Bắt buộc");
@@ -246,17 +250,174 @@ public class CreateProductScript extends Commontestcase {
 		verifyEqual(createProductPage.getDynamicText(requiredMsg), "Bắt buộc");
 	}
 
-	// @Test
-//	public void TC_15() throws InterruptedException {
-////		createProductPage.clickPostProduct();
-//		createProductPage.clickCate1();
-//		createProductPage.clickRandomValueCate1();
-//		createProductPage.clickCate2();
-//		createProductPage.clickRandomValueCate2();
-//		createProductPage.clickRandomCat3();
-//		Thread.sleep(5000);
-//
-//	}
+	// TC16 Input Quantity: "10"7. Input Price: "8"
+	@Test
+	public void TC_16() throws Exception {
+		createProductPage.uploadIMG(locatorDataImage);
+		createProductPage.inputNameProduct(productName);
+		createProductPage.clickCate1();
+		createProductPage.clickRandomValueCate1();
+		createProductPage.clickCate2();
+		createProductPage.clickRandomValueCate2();
+		createProductPage.clickRandomCat3();
+		createProductPage.inputDescription(description);
+		createProductPage.inputQuantity(quantity);
+		createProductPage.inputPrice(priceInput);
+		createProductPage.clickPost();
+		Thread.sleep(1000);
+		verifyEqual(createProductPage.getDynamicText(weightRequiredMsg), "Hãy điền cân nặng sản phẩm.");
+		verifyEqual(createProductPage.getDynamicText(requiredMsg), "Bắt buộc");
+		verifyEqual(createProductPage.getDynamicText(requiredMsg), "Bắt buộc");
+		verifyEqual(createProductPage.getDynamicText(requiredMsg), "Bắt buộc");
+	}
+
+//	// TC17 Input Weight: "49"1. Weight: "Cân nặng từ 50g đến 10000g."
+	@Test
+	public void TC_17() throws Exception {
+		createProductPage.uploadIMG(locatorDataImage);
+		createProductPage.inputNameProduct(productName);
+		createProductPage.clickCate1();
+		createProductPage.clickRandomValueCate1();
+		createProductPage.clickCate2();
+		createProductPage.clickRandomValueCate2();
+		createProductPage.clickRandomCat3();
+		createProductPage.inputDescription(description);
+		createProductPage.inputQuantity(quantity);
+		createProductPage.inputPrice(priceInput);
+		createProductPage.inputWeight(weightSmallerRange);
+		createProductPage.clickPost();
+		Thread.sleep(1000);
+		verifyEqual(createProductPage.getDynamicText(weightMustRangeMsg), "Cân nặng từ 50g đến 10000g.");
+		verifyEqual(createProductPage.getDynamicText(requiredMsg), "Bắt buộc");
+		verifyEqual(createProductPage.getDynamicText(requiredMsg), "Bắt buộc");
+		verifyEqual(createProductPage.getDynamicText(requiredMsg), "Bắt buộc");
+	}
+//Tc18 8. Input Weight: "10001" weightBiggerRange
+
+	@Test
+	public void TC_18() throws Exception {
+		createProductPage.uploadIMG(locatorDataImage);
+		createProductPage.inputNameProduct(productName);
+		createProductPage.clickCate1();
+		createProductPage.clickRandomValueCate1();
+		createProductPage.clickCate2();
+		createProductPage.clickRandomValueCate2();
+		createProductPage.clickRandomCat3();
+		createProductPage.inputDescription(description);
+		createProductPage.inputQuantity(quantity);
+		createProductPage.inputPrice(priceInput);
+		createProductPage.inputWeight(weightBiggerRange);
+		createProductPage.clickPost();
+		Thread.sleep(1000);
+		verifyEqual(createProductPage.getDynamicText(weightMustRangeMsg), "Cân nặng từ 50g đến 10000g.");
+		verifyEqual(createProductPage.getDynamicText(requiredMsg), "Bắt buộc");
+		verifyEqual(createProductPage.getDynamicText(requiredMsg), "Bắt buộc");
+		verifyEqual(createProductPage.getDynamicText(requiredMsg), "Bắt buộc");
+	}
+
+	@Test
+	public void TC_19() throws Exception {
+		createProductPage.uploadIMG(locatorDataImage);
+		createProductPage.inputNameProduct(productName);
+		createProductPage.clickCate1();
+		createProductPage.clickRandomValueCate1();
+		createProductPage.clickCate2();
+		createProductPage.clickRandomValueCate2();
+		createProductPage.clickRandomCat3();
+		createProductPage.inputDescription(description);
+		createProductPage.inputQuantity(quantity);
+		createProductPage.inputPrice(priceInput);
+		createProductPage.inputWeight(weightMin);
+		createProductPage.clickPost();
+		Thread.sleep(1000);
+		verifyEqual(createProductPage.getDynamicText(requiredMsg), "Bắt buộc");
+		verifyEqual(createProductPage.getDynamicText(requiredMsg), "Bắt buộc");
+		verifyEqual(createProductPage.getDynamicText(requiredMsg), "Bắt buộc");
+	}
+
+	@Test
+	public void TC_20() throws Exception {
+		createProductPage.uploadIMG(locatorDataImage);
+		createProductPage.inputNameProduct(productName);
+		createProductPage.clickCate1();
+		createProductPage.clickRandomValueCate1();
+		createProductPage.clickCate2();
+		createProductPage.clickRandomValueCate2();
+		createProductPage.clickRandomCat3();
+		createProductPage.inputDescription(description);
+		createProductPage.inputQuantity(quantity);
+		createProductPage.inputPrice(priceInput);
+		createProductPage.inputWeight(weight);
+		createProductPage.clickPost();
+		Thread.sleep(1000);
+		verifyEqual(createProductPage.getDynamicText(requiredMsg), "Bắt buộc");
+		verifyEqual(createProductPage.getDynamicText(requiredMsg), "Bắt buộc");
+		verifyEqual(createProductPage.getDynamicText(requiredMsg), "Bắt buộc");
+	}
+
+	@Test
+	public void TC_21() throws Exception {
+		createProductPage.uploadIMG(locatorDataImage);
+		createProductPage.inputNameProduct(productName);
+		createProductPage.clickCate1();
+		createProductPage.clickRandomValueCate1();
+		createProductPage.clickCate2();
+		createProductPage.clickRandomValueCate2();
+		createProductPage.clickRandomCat3();
+		createProductPage.inputDescription(description);
+		createProductPage.inputQuantity(quantity);
+		createProductPage.inputPrice(priceInput);
+		createProductPage.inputWeight(weight);
+		createProductPage.inputWidth(widthSmallerRange);
+		createProductPage.clickPost();
+		Thread.sleep(1000);
+		verifyEqual(createProductPage.getDynamicText(widthMustRangeMsg), "Từ 1cm tới 50cm");
+		verifyEqual(createProductPage.getDynamicText(requiredMsg), "Bắt buộc");
+		verifyEqual(createProductPage.getDynamicText(requiredMsg), "Bắt buộc");
+	}
+
+	@Test
+	public void TC_22() throws Exception {
+		createProductPage.uploadIMG(locatorDataImage);
+		createProductPage.inputNameProduct(productName);
+		createProductPage.clickCate1();
+		createProductPage.clickRandomValueCate1();
+		createProductPage.clickCate2();
+		createProductPage.clickRandomValueCate2();
+		createProductPage.clickRandomCat3();
+		createProductPage.inputDescription(description);
+		createProductPage.inputQuantity(quantity);
+		createProductPage.inputPrice(priceInput);
+		createProductPage.inputWeight(weight);
+		createProductPage.inputWidth(widthBiggerRange);
+		createProductPage.clickPost();
+		Thread.sleep(1000);
+		verifyEqual(createProductPage.getDynamicText(widthMustRangeMsg), "Từ 1cm tới 50cm");
+		verifyEqual(createProductPage.getDynamicText(requiredMsg), "Bắt buộc");
+		verifyEqual(createProductPage.getDynamicText(requiredMsg), "Bắt buộc");
+	}
+
+	@Test
+	public void TC_23() throws Exception {
+		productName = "XuanHoang" + randomName();
+		createProductPage.uploadIMG(locatorDataImage);
+		createProductPage.inputNameProduct(productName);
+		createProductPage.clickCate1();
+		createProductPage.clickRandomValueCate1();
+		createProductPage.clickCate2();
+		createProductPage.clickRandomValueCate2();
+		createProductPage.clickRandomCat3();
+		Thread.sleep(1000);
+		createProductPage.inputDescription(description);
+		createProductPage.inputQuantity(quantity);
+		createProductPage.inputPrice(priceInput);
+		createProductPage.inputWeight(weight);
+		createProductPage.inputWidth(widthMin);
+		createProductPage.clickPost();
+		verifyEqual(createProductPage.getDynamicText(requiredMsg), "Bắt buộc");
+		verifyEqual(createProductPage.getDynamicText(requiredMsg), "Bắt buộc");
+	}
+
 	@Test
 	public void TC_24() throws Exception {
 		productName = "XuanHoang" + randomName();
@@ -495,7 +656,6 @@ public class CreateProductScript extends Commontestcase {
 	@Test
 	public void TC_33() throws Exception {
 		productName = "XuanHoang" + randomName();
-//		createProductPage.clickPostProduct();
 		createProductPage.uploadIMG(locatorDataImage);
 		createProductPage.inputNameProduct(productName);
 		createProductPage.clickCate1();
@@ -540,7 +700,6 @@ public class CreateProductScript extends Commontestcase {
 	@Test
 	public void TC_34() throws Exception {
 		productName = "XuanHoang" + randomName();
-//		createProductPage.clickPostProduct();
 		createProductPage.uploadIMG(locatorDataImage);
 		createProductPage.inputNameProduct(productName);
 		createProductPage.clickCate1();
@@ -580,7 +739,7 @@ public class CreateProductScript extends Commontestcase {
 
 	@AfterClass
 	public void AfterClass() {
-//		 closeBrowser();
+		 closeBrowser();
 	}
 
 }

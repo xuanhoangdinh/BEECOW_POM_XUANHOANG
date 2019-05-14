@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="13" passed="13">
+<testng-results skipped="0" failed="0" total="7" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="156557" started-at="2019-05-13T10:32:07Z" finished-at="2019-05-13T10:34:44Z">
+  <suite name="Suite" duration-ms="18653" started-at="2019-05-14T04:05:28Z" finished-at="2019-05-14T04:05:46Z">
     <groups>
     </groups>
-    <test name="Login guru on Chrome" duration-ms="156557" started-at="2019-05-13T10:32:07Z" finished-at="2019-05-13T10:34:44Z">
-      <class name="com.beecow.testcase.CreateProductScript">
-        <test-method status="PASS" signature="BeforeClass(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="BeforeClass" is-config="true" duration-ms="32880" started-at="2019-05-13T17:32:07Z" finished-at="2019-05-13T17:32:40Z">
+    <test name="Login BeeCow on Chrome" duration-ms="18653" started-at="2019-05-14T04:05:28Z" finished-at="2019-05-14T04:05:46Z">
+      <class name="com.beecow.testcase.LoginScript">
+        <test-method status="PASS" signature="BeforeClass(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.beecow.testcase.LoginScript@d2cc05a]" name="BeforeClass" is-config="true" duration-ms="8003" started-at="2019-05-14T11:05:28Z" finished-at="2019-05-14T11:05:36Z">
           <params>
             <param index="0">
               <value>
@@ -28,115 +28,39 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BeforeClass -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="beforeMethod" is-config="true" duration-ms="8188" started-at="2019-05-13T17:32:40Z" finished-at="2019-05-13T17:32:48Z">
+        <test-method status="PASS" signature="TC_01_LoginEmptyEmailAndPassWord()[pri:0, instance:com.beecow.testcase.LoginScript@d2cc05a]" name="TC_01_LoginEmptyEmailAndPassWord" duration-ms="1514" started-at="2019-05-14T11:05:36Z" finished-at="2019-05-14T11:05:37Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="TC_009()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="TC_009" duration-ms="846" started-at="2019-05-13T17:32:48Z" finished-at="2019-05-13T17:32:49Z">
+        </test-method> <!-- TC_01_LoginEmptyEmailAndPassWord -->
+        <test-method status="PASS" signature="TC_02_LoginWrongSDT()[pri:0, instance:com.beecow.testcase.LoginScript@d2cc05a]" name="TC_02_LoginWrongSDT" duration-ms="340" started-at="2019-05-14T11:05:37Z" finished-at="2019-05-14T11:05:37Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC_009 -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="beforeMethod" is-config="true" duration-ms="4198" started-at="2019-05-13T17:32:49Z" finished-at="2019-05-13T17:32:53Z">
+        </test-method> <!-- TC_02_LoginWrongSDT -->
+        <test-method status="PASS" signature="TC_03_LoginWrongEmail()[pri:0, instance:com.beecow.testcase.LoginScript@d2cc05a]" name="TC_03_LoginWrongEmail" duration-ms="354" started-at="2019-05-14T11:05:37Z" finished-at="2019-05-14T11:05:38Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="TC_08()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="TC_08" duration-ms="6" started-at="2019-05-13T17:32:53Z" finished-at="2019-05-13T17:32:53Z">
+        </test-method> <!-- TC_03_LoginWrongEmail -->
+        <test-method status="PASS" signature="TC_04_LogincorrectEmailBlankPassword()[pri:0, instance:com.beecow.testcase.LoginScript@d2cc05a]" name="TC_04_LogincorrectEmailBlankPassword" duration-ms="462" started-at="2019-05-14T11:05:38Z" finished-at="2019-05-14T11:05:38Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC_08 -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="beforeMethod" is-config="true" duration-ms="3043" started-at="2019-05-13T17:32:53Z" finished-at="2019-05-13T17:32:56Z">
+        </test-method> <!-- TC_04_LogincorrectEmailBlankPassword -->
+        <test-method status="PASS" signature="TC_05_LogincorrectEmailPasswordNotEnoughtCharracter()[pri:0, instance:com.beecow.testcase.LoginScript@d2cc05a]" name="TC_05_LogincorrectEmailPasswordNotEnoughtCharracter" duration-ms="246" started-at="2019-05-14T11:05:38Z" finished-at="2019-05-14T11:05:39Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="TC_24()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="TC_24" duration-ms="3544" started-at="2019-05-13T17:32:56Z" finished-at="2019-05-13T17:33:00Z">
+        </test-method> <!-- TC_05_LogincorrectEmailPasswordNotEnoughtCharracter -->
+        <test-method status="PASS" signature="TC_06_LogincorrectEmailWrongPassword()[pri:0, instance:com.beecow.testcase.LoginScript@d2cc05a]" name="TC_06_LogincorrectEmailWrongPassword" duration-ms="753" started-at="2019-05-14T11:05:39Z" finished-at="2019-05-14T11:05:39Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC_24 -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="beforeMethod" is-config="true" duration-ms="3215" started-at="2019-05-13T17:33:00Z" finished-at="2019-05-13T17:33:03Z">
+        </test-method> <!-- TC_06_LogincorrectEmailWrongPassword -->
+        <test-method status="PASS" signature="TC_07_LoginCorrectEmailSdtAndPassword()[pri:0, instance:com.beecow.testcase.LoginScript@d2cc05a]" name="TC_07_LoginCorrectEmailSdtAndPassword" duration-ms="6312" started-at="2019-05-14T11:05:39Z" finished-at="2019-05-14T11:05:46Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="TC_25()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="TC_25" duration-ms="3055" started-at="2019-05-13T17:33:03Z" finished-at="2019-05-13T17:33:06Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC_25 -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="beforeMethod" is-config="true" duration-ms="2797" started-at="2019-05-13T17:33:06Z" finished-at="2019-05-13T17:33:09Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="TC_26()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="TC_26" duration-ms="3450" started-at="2019-05-13T17:33:09Z" finished-at="2019-05-13T17:33:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC_26 -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="beforeMethod" is-config="true" duration-ms="3878" started-at="2019-05-13T17:33:13Z" finished-at="2019-05-13T17:33:16Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="TC_27()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="TC_27" duration-ms="2818" started-at="2019-05-13T17:33:16Z" finished-at="2019-05-13T17:33:19Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC_27 -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="beforeMethod" is-config="true" duration-ms="1906" started-at="2019-05-13T17:33:19Z" finished-at="2019-05-13T17:33:21Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="TC_28()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="TC_28" duration-ms="3103" started-at="2019-05-13T17:33:21Z" finished-at="2019-05-13T17:33:24Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC_28 -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="beforeMethod" is-config="true" duration-ms="1830" started-at="2019-05-13T17:33:24Z" finished-at="2019-05-13T17:33:26Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="TC_29()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="TC_29" duration-ms="2940" started-at="2019-05-13T17:33:26Z" finished-at="2019-05-13T17:33:29Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC_29 -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="beforeMethod" is-config="true" duration-ms="1531" started-at="2019-05-13T17:33:29Z" finished-at="2019-05-13T17:33:31Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="TC_30()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="TC_30" duration-ms="3228" started-at="2019-05-13T17:33:31Z" finished-at="2019-05-13T17:33:34Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC_30 -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="beforeMethod" is-config="true" duration-ms="2021" started-at="2019-05-13T17:33:34Z" finished-at="2019-05-13T17:33:36Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="TC_31()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="TC_31" duration-ms="9217" started-at="2019-05-13T17:33:36Z" finished-at="2019-05-13T17:33:45Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC_31 -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="beforeMethod" is-config="true" duration-ms="2481" started-at="2019-05-13T17:33:45Z" finished-at="2019-05-13T17:33:47Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="TC_32()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="TC_32" duration-ms="9184" started-at="2019-05-13T17:33:47Z" finished-at="2019-05-13T17:33:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC_32 -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="beforeMethod" is-config="true" duration-ms="2250" started-at="2019-05-13T17:33:57Z" finished-at="2019-05-13T17:33:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="TC_33()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="TC_33" duration-ms="29216" started-at="2019-05-13T17:33:59Z" finished-at="2019-05-13T17:34:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC_33 -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="beforeMethod" is-config="true" duration-ms="1781" started-at="2019-05-13T17:34:28Z" finished-at="2019-05-13T17:34:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="TC_34()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="TC_34" duration-ms="13841" started-at="2019-05-13T17:34:30Z" finished-at="2019-05-13T17:34:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC_34 -->
-        <test-method status="PASS" signature="AfterClass()[pri:0, instance:com.beecow.testcase.CreateProductScript@1753acfe]" name="AfterClass" is-config="true" duration-ms="1" started-at="2019-05-13T17:34:44Z" finished-at="2019-05-13T17:34:44Z">
+        </test-method> <!-- TC_07_LoginCorrectEmailSdtAndPassword -->
+        <test-method status="PASS" signature="AfterClass()[pri:0, instance:com.beecow.testcase.LoginScript@d2cc05a]" name="AfterClass" is-config="true" duration-ms="654" started-at="2019-05-14T11:05:46Z" finished-at="2019-05-14T11:05:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AfterClass -->
-      </class> <!-- com.beecow.testcase.CreateProductScript -->
-    </test> <!-- Login guru on Chrome -->
+      </class> <!-- com.beecow.testcase.LoginScript -->
+    </test> <!-- Login BeeCow on Chrome -->
   </suite> <!-- Suite -->
 </testng-results>
